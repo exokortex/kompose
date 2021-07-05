@@ -289,6 +289,14 @@ func BuildDockerImage(service kobject.ServiceConfig, name string) error {
 		buildargs = append(buildargs, dockerlib.BuildArg{Name: envName, Value: value})
 	}
 
+	log.Debugf("==Build parameters==")
+	log.Debugf("%s", imagePath)
+	log.Debugf("%s", imageName)
+	log.Debugf("%s", service.Dockerfile)
+	log.Debugf("%s", buildargs)
+
+	return nil
+
 	// Connect to the Docker client
 	client, err := docker.Client()
 	if err != nil {
