@@ -2,7 +2,7 @@ name: Go
 
 on:
   push:
-    branches: [ kdctf ]
+    branches: [ '*' ]
   pull_request:
     branches: [ kdctf ]
 
@@ -32,4 +32,3 @@ jobs:
       uses: actions/upload-artifact@v2.1.4
       with:
         path: "kompose"
-
