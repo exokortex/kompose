@@ -27,8 +27,8 @@ jobs:
 
     - name: Test
       run: make test
-      
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.1.4
-      with: 
+      with:
         path: "kompose"
