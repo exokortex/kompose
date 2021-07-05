@@ -1,6 +1,10 @@
 name: Go
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [ kdctf ]
+  pull_request:
+    branches: [ kdctf ]
 
 jobs:
 
