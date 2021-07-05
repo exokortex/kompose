@@ -1,9 +1,5 @@
 name: Kompose CI
-on:
-  push:
-    branches:
-      - master
-  pull_request:
+on: workflow_dispatch
 env:
   # Avoid noisy outputs like "tput: No value for $TERM and no -T specified"
   TERM: dumb
