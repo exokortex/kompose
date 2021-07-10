@@ -796,6 +796,10 @@ func (k *Kubernetes) ConfigVolumes(name string, service kobject.ServiceConfig) (
 		readonly := len(volume.Mode) > 0 && volume.Mode == "ro"
 
 		if volume.VolumeName == "" {
+			if len(volume.Host) > 0 && (!useHostPath && !useConfigMap) {
+				log.Warningf("Skipping bind mount of path %q", volume.Host)
+				continue
+			}
 			if useEmptyVolumes {
 				volumeName = strings.Replace(volume.PVCName, "claim", "empty", 1)
 			} else if useHostPath {
