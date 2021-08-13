@@ -824,6 +824,7 @@ func FormatEnvName(name string) string {
 	envName := strings.Trim(name, "./")
 	envName = strings.Replace(envName, ".", "-", -1)
 	envName = strings.Replace(envName, "/", "-", -1)
+	envName = strings.Replace(envName, "_", "-", -1)
 	return envName
 }
 
